@@ -2,148 +2,173 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="animate.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
-<!-- Задания -->
-
 <body>
-  <div id="app">
-    <main>
-      <form action="" v-on:submit.prevent="createToDo">
-        <select value="" v-model="day">
-          <option value="1" szelected>Понедельник</option>
-          <option value="2">Вторник</option>
-          <option value="3">Среда</option>
-          <option value="4">Четверг</option>
-          <option value="5">Пятница</option>
-          <option value="6">Суббота</option>
-          <option value="7">Воскресенье</option>
-        </select>
-        <input type="text"v-model="ToDo" >
-        <input type="submit" name="nubex" value="Готово " />
-        
-      </form>
 
-      <ul>
-        <li>
-          <h4>Today</h4>
-          
-  
-          <section class="toDoElement" v-for="item,index in list[0]">
-            <img src="" alt="">
-            <label for="">
-              <input type="checkbox" name="" id="">
-            <p>{{item}}</p>
-             <img v-on:click="removeTodo(0,index)" src="https://cdn-icons-png.flaticon.com/512/4225/4225690.png" width="20" height="20" alt="">
-            </label>
-          </section>
-        
-        </li>
 
-        <li>
-          <h4>Tusday</h4>
-          <section class="toDoElement" v-for="item,index in list[1]">
-            <img src="" alt="">
-            <label for="">
-              <input type="checkbox" name="" id="">
-            <p>{{item}}</p>
-             <img v-on:click="removeTodo(1,index)" src="https://cdn-icons-png.flaticon.com/512/4225/4225690.png" width="20" height="20" alt="">
-          
-          </section>
-            </label>
-          </section>
-        </li>
 
-        <li>
-          <h4>Wendnesday</h4>
-          <section class="toDoElement" v-for="item,index in list[2]">
-            <img src="" alt="">
-            <label for="">
-              <input type="checkbox" name="" id="">
-            <p>{{item}}</p>
-             <img v-on:click="removeTodo(2,index)" src="https://cdn-icons-png.flaticon.com/512/4225/4225690.png" width="20" height="20" alt="">
-          
-          </section>
-            </label>
-          </section>
-        </li>
+    <header>
+        <div class="menu">
+            <img src="portfolio_icon_128519.svg" alt="">
 
-        <li>
-          <h4>Thursday</h4>
-          
-          <section class="toDoElement" v-for="item,index in list[3]">
-            <img src="" alt="">
-            <label for="">
-              <input type="checkbox" name="" id="">
-            <p>{{item}}</p>
-             <img v-on:click="removeTodo(3,index)" src="https://cdn-icons-png.flaticon.com/512/4225/4225690.png" width="20" height="20" alt="">
-          
-          </section>
-            </label>
-          </section>
-        </li>
+            <div class="rheader">
 
-        <li>
-          <h4>Friday</h4>
-          
-          <section class="toDoElement" v-for="item,index in list[4]">
-            <img src="" alt="">
-            <label for="">
-              <input type="checkbox" name="" id="">
-            <p>{{item}}</p>
-             <img v-on:click="removeTodo(4,index)" src="https://cdn-icons-png.flaticon.com/512/4225/4225690.png" width="20" height="20" alt="">
-          
-          </section>
-            </label>
-          </section>
-        </li>
+                <a href="">Портфолио</a>
+                <a href="">Услуги</a>
+                <a href="">Цены</a>
+                <a href="#cont">Контакты</a>
+            </div>
+            <button class="English version">
+               <a href="ind.html">English version </a> 
+            </button>
+        </div>
+       
+    </header>
 
-        <li>
-          <h4>Saturday</h4>
-          
-          <section class="toDoElement" v-for="item,index in list[5]">
-            <img src="" alt="">
-            <label for="">
-              <input type="checkbox" name="" id="">
-            <p>{{item}}</p>
-             <img v-on:click="removeTodo(5,index)" src="https://cdn-icons-png.flaticon.com/512/4225/4225690.png" width="20" height="20" alt="">
-          
-          </section>
-          </section>
-        </li>
+    </div>
+    <div class="name">
+        <h3>
+            Веб-дизайнеры
+        </h3>
+        <p>Разработка сайтов для вас </p>
+        <br> <a href="">Смотреть портфолио </a><br>
+    </div>
+    <br>
+    <div class="c"><br>
+        <div class="cv">
+            <h4>Задача</h4>
+            <p>Разработать одностраничный сайт-портфолио для себя и моих клиентов</p>
+        </div>
+        <div class="cv cx">
+            <h4>Решение </h4>
+            <p>Создала стильный, лаконичный сайт с целью презентации работ, услуг, цен и контактов</p>
+        </div>
+        <div class="cv">
+            <h4>Основная цель</h4>
+            <p>Удобство для будущих клиентов. Представление полной информации обо мне и моей работе.</p>
+        </div>
+    </div>
+    </div>
+    <h4>Шрифты</h4>
+    <div class="font">
 
-        <li>
-          <h4>Sunday</h4>
-         
-         
-          <section class="toDoElement" v-for="item,index in list[6]">
-            <img src="" alt="">
-            <label for="">
-              <input type="checkbox" name="" id="">
-            <p>{{item}}</p>
-             <img v-on:click="removeTodo(6,index)" src="https://cdn-icons-png.flaticon.com/512/4225/4225690.png" width="20" height="20" alt="">
-          
-          </section>
-            </label>
-          </section>
-        </li>
-      </ul>
+        <div class="g">
+            <P>ABCD</P>
+            <P>Ubuntu</P>
+        </div>
+        <div class="u">
+            <P>ABCD</P>
+            <P>Manrope</P>
+        </div>
 
-    </main>
-    <nav>
-      <button v-on:click="save" type="button" class="blue">Save</button>
-      <button v-on:click="load" type="button" class="blue">Load</button>
-    </nav>
-  </div>
 
-  <script src="https://unpkg.com/vue@next"></script>
-  <script src="myscript.js"></script>
+
+    </div>
+
+
+    <h4>Цвета</h4>
+    <div class="ci">
+
+        <div id="circle"> </div>
+        <div id="square"> </div>
+        <div id="circle2"> </div>
+    </div>
+
+    <br>
+    <h4>Портфолио</h4><br>
+    <div class="portfolio">
+
+        <div class="a">
+            <p>Заметки</p>
+            <br> <a href="https://redel1.github.io/2/"> <img class="small-rotate" src="notebook_120905.svg" alt=""
+                    height="70"></a><br>
+            <br> <a href="">Перейти на сайт </a><br>
+        </div>
+        <div class="a">
+            <p>Магазин электроники </p>
+            <br><a href="https://redel1.github.io/El/"> <img class="small-rotate"
+                    src="shop-store-frontal-building_icon-icons.com_56118.svg" alt="" height="60"></a><br>
+            <br> <a href="">Перейти на сайт </a><br>
+        </div>
+        <div class="a">
+            <p>Новостной блок</p>
+            <br> <a href="https://redel1.github.io/Rhdv/"> <img class="small-rotate"
+                    src="news-newspaper-media-paper-press-article_108607.svg" alt="" height="50"></a><br>
+            <br> <a href="">Перейти на сайт </a><br>
+        </div>
+    </div>
+    <h4>Услуги и цены</h4>
+    <div class="shop">
+        <div class="sh">
+
+
+            <div class="in">
+                <h3>Интернет-магазин</h3>
+                <p>от 0 до 0 </p>
+                <p>от 1 дня до 2 дней</p>
+                <a href="">Подробнее</a>
+            </div>
+
+            <div class="im">
+                <h3>Новостной блок</h3>
+                <p>от 0 до 0 </p>
+                <p>от 1 дня до 2 дней</p>
+                <a href="">Подробнее</a>
+            </div>
+        </div>
+
+
+        <h4>Этапы</h4>
+        <div class="stages">
+
+
+            <div class="q">
+                <h3>Знакомство </h3>
+                <P>Созваниваемся/списываемся с вами для обсуждения деталей.Вы рассказываете,какой сайт хотели бы
+                    получить.Определяем сроки и стоимость выполнение работы.Заключаем договор</P>
+            </div>
+
+            <div class="q">
+                <h3>Аналитика</h3>
+                <p>Разбираемся в нише.Анализирую конкурентов и целевую аудиторию.Если у вас нет ТЗ,то сами напишем
+                    продающий текст и составим структуру будущего сайта.</p>
+
+            </div>
+
+            <div class="q">
+                <h3>Прототипирование</h3>
+                <p>Разрабатываем некую схему,где указано расположение основных элементов на странице сайта.После
+                    утверждения,вносится предоплата 50%</p>
+            </div>
+            <div class="q">
+                <h3>Дизайн-концепция</h3>
+                <p>Готовим 2-3 варианта главного экрана.Вы выбираете наиболее близкий вам.Утверждаем.Разрабатываем
+                    дизайн всего сайта.Вносим правки.</p>
+            </div>
+            <div class="q">
+                <h3>Верстка</h3>
+                <p>Переносим дизайн на платформу и адаптируем под мобильные устройства.Далее проводим все технические
+                    настройки.Вносятся оствшиеся 50% и мы передаем вам сайт</p>
+            </div>
+        </div>
+    </div>
+<div id="cont"></div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="myscript.js"></script>
+    <script src="wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+
 </body>
 
 </html>

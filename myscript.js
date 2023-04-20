@@ -1,49 +1,75 @@
-const Counter = {
-    data() {
-        return {
-            day: 1,
-            ToDo:'',
-            list: [
-                [],
-                [],
-                [],
-                [],
-                [],
-                [],
-                [],
-                // ['Replay email','Running','Swimming'],
-                // ['Read Book','Brush teeth','Drink water'],
-                // ['Start create project','Call Micheal','Review design'],
-                // ['Read Book','Brush teeth','Drink water'],
-                // ['Get up early','To end project','Call Micheal'],
-                // ['Read Book','Brush teeth','Read Book'],
-                // ['Read Book','Brush teeth','Read Book'],
-            ]
+const { createApp } = Vue
+
+
+
+
+createApp({
+  data() {
+    return {
+      email: '',
+      password: '',
+      loading: false,
+      error: '',
+    }
+  },
+  methods: {
+    register() {
+      this.loading = true
+      fetch('http://studentsystem.xyz:8080/user', {
+        method: "POST",
+        body: JSON.stringify({
+          email: this.email,
+          password: this.password
+        })
+      }).then((response) => {
+        switch (response.status) {
+          case 201:
+            alert("Успешная регистрация")
+          case 403:
+            this.error = ('Такой пользователь уже существует')
+            break;
+          case 400:
+            this.error = ('Не верные данные')
+            break;
         }
-    },
-    
-    methods: {
-        createToDo(){
-            if (this.ToDo-='')
-            this.list[this.day-1].push(this.ToDo)
-            this.ToDo=''
-        },
-        removeTodo(list,index){
-            this.list[list].splice(index,1);
-        },
-        save(){
-            localStorage.setItem('list', JSON.stringify(this.list))
-        },
-        load(){
-            this.list=JSON.parse(localStorage.getItem('list'))
-        }
-        
-    },
-    mounted () {
-        this.load()
-}
-}
+        return response.json();
+      }).then((data) => {
+        this.loading = false
+        // location.href='/'
+      }).catch((err) => {
+        console.error("Невозможно отправить запрос", err);
+      });
+    }
+  },
+  login() {
+    this.loading = true
+    fetch('http://studentsystem.xyz:8080/user/auth', {
+      method: "POST",
+      body: JSON.stringify({
+        email: this.email,
+        password: this.password,
 
-
-
-Vue.createApp(Counter).mount('#app')
+      })
+    }).then((response) => {
+      switch (response.status) {
+        case 200:
+          alert('Вы авторизовались ')
+        case 403:
+          this.error = ('Не верный логин или пароль')
+          break;
+        case 400:
+          this.error = ('Не верные данные')
+          break;
+      }
+      return response.json();
+    }).then((data) => {
+      this.loading = false
+      if (data['access_token']) {
+        alert('Вы успешно вошли')
+      }
+      console.log(data)
+    }).catch((err) => {
+      console.error("Невозможно отправить запрос", err);
+    });
+  }
+}).mount('#app')
